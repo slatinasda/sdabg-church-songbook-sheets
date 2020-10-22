@@ -3,13 +3,15 @@
 This repository contains a collection of essential [Seventh-day Adventist](https://adventist.org) church songs.
 The sheet music in this repository were created with [MuseScore](https://musescore.org).
 
-## Generate a PDF book from the source files
 
-### Dependecies
+## Dependecies
 
 - Linux
 - MuseScore 3.5+
 - Ghostscript 9.26+
+
+
+## Generate a PDF book
 
 ### Instructions
 
@@ -29,7 +31,22 @@ The sheet music in this repository were created with [MuseScore](https://musesco
     The generated PDF Songbook is located in the root folder of this project.
 
 
-#### Software
+## Generate MIDI files
+
+### Instructions
+
+1. Grab a MuseScore executable
+
+2. Run the script to generate MIDI files
+
+    ```
+    ./make_midi.sh /path/to/MuseScore.AppImage
+    ```
+
+    The generated MIDI files are located in the `MIDIs` folder.
+
+
+## Software
 
 Learn more about the software that was used to create those sheets:
 
