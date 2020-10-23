@@ -42,7 +42,7 @@ generate_pdfs() {
     done
 
     for missing_song_number in "${missing_songs[@]}"; do
-        "$MUSESCORE_EXECUTABLE" "$SOURCE_FILES_DIR/${missing_song_number}.mscz" -o "$OUTPUT_PDF_FILES_DIR/${missing_song_number}.pdf"
+        "$MUSESCORE_EXECUTABLE" "$SOURCE_FILES_DIR/${missing_song_number}.mscz" -o "$OUTPUT_PDF_FILES_DIR/${missing_song_number}.pdf" || exit 1
     done
 }
 

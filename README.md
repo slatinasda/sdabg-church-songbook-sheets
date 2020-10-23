@@ -1,5 +1,7 @@
 # Adventist songbook sheets
 
+[![Build workflow](https://github.com/slatinasda/sdabg-church-songbook-sheets/workflows/Build/badge.svg)](https://github.com/slatinasda/sdabg-church-songbook-sheets/actions)
+
 This repository contains a collection of essential [Seventh-day Adventist](https://adventist.org) church songs.
 The sheet music in this repository were created with [MuseScore](https://musescore.org).
 
@@ -44,6 +46,17 @@ The sheet music in this repository were created with [MuseScore](https://musesco
     ```
 
     The generated MIDI files are located in the `MIDIs` folder.
+
+
+## Download CI Artifacts
+
+You can download the generated PDF book and MIDI files through the Github Actions CI:
+
+1. Click on the [Actions tab](https://github.com/slatinasda/sdabg-church-songbook-sheets/actions)
+
+2. Open the latest successful build
+
+3. Download the zip files located under the **Artifacts** section
 
 
 ## Software

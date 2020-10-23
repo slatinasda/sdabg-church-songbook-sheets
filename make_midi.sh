@@ -31,7 +31,7 @@ generate_intros_midi() {
             continue
         fi
 
-        "$MUSESCORE_EXECUTABLE" "$file" -o "$INTROS_MIDI_OUTPUT_DIR/$(basename "${file%.mscz}").mid"
+        "$MUSESCORE_EXECUTABLE" "$file" -o "$INTROS_MIDI_OUTPUT_DIR/$(basename "${file%.mscz}").mid" || exit 1
     done
 }
 
@@ -42,7 +42,7 @@ generate_songs_midi() {
             continue
         fi
 
-        "$MUSESCORE_EXECUTABLE" "$file" -o "$SONGS_MIDI_OUTPUT_DIR/$(basename "${file%.mscz}").mid"
+        "$MUSESCORE_EXECUTABLE" "$file" -o "$SONGS_MIDI_OUTPUT_DIR/$(basename "${file%.mscz}").mid" || exit 1
     done
 }
 
