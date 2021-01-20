@@ -9,7 +9,7 @@ The sheet music in this repository were created with [MuseScore](https://musesco
 ## Dependecies
 
 - Linux
-- MuseScore 3.5+
+- MuseScore 3.6+
 - Ghostscript 9.26+
 
 
@@ -21,8 +21,8 @@ The sheet music in this repository were created with [MuseScore](https://musesco
 
     - Head over to https://musescore.org/ and dowload the MuseScore AppImage.
 
-    - **Note:** the sheets were originally created with MuseScore 3.5. If you have trouble generating sheets with newer versions of MuseScore, download a MuseScore 3.5 AppImage from here:
-    - https://github.com/musescore/MuseScore/releases/tag/v3.5.1
+    - **Note:** the sheets were created with MuseScore 3.6. If you have trouble generating sheets with newer versions of MuseScore, download a MuseScore 3.6 AppImage from here:
+    - https://github.com/musescore/MuseScore/releases/tag/v3.6
 
 2. Run the book generation script
 
