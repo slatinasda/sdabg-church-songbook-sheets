@@ -31,8 +31,27 @@ jobs:
     - name: Generate MIDI files
       run: |
         xvfb-run -- ./make_midi.sh ./MuseScore-3.6.2.548021370-x86_64.AppImage
+    - name: Add all generated MIDI files into Zip archive
+      run: |
+        zip songbook-midi.zip MIDIs/**/*.mid
     - name: Upload MIDI files
       uses: actions/upload-artifact@v2
       with:
         name: songbook-midi
         path: MIDIs/**/*.mid
+    - name: Upload PDF songbook to a GitHub release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: "Church Songbook.pdf"
+        asset_name: "songbook.pdf"
+        tag: ${{ github.ref }}
+        overwrite: true
+    - name: Upload MIDI files to a GitHub release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: "songbook-midi.zip"
+        tag: ${{ github.ref }}
+        overwrite: true
+        file_glob: true

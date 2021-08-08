@@ -50,13 +50,13 @@ The sheet music in this repository were created with [MuseScore](https://musesco
 
 ## Download CI Artifacts
 
-You can download the generated PDF book and MIDI files through the Github Actions CI:
+You can download the generated PDF book and MIDI files through the release page:
 
-1. Click on the [Actions tab](https://github.com/slatinasda/sdabg-church-songbook-sheets/actions)
+- https://github.com/slatinasda/sdabg-church-songbook-sheets/releases
 
-2. Open the latest successful build
+Additionally, you can download them from Github Actions:
 
-3. Download the zip files located under the **Artifacts** section
+- https://github.com/slatinasda/sdabg-church-songbook-sheets/actions
 
 
 ## Software
