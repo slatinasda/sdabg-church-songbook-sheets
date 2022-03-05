@@ -2,9 +2,8 @@ name: Build
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    tags:
+      - '*'
 
 jobs:
   book-and-midi:
@@ -23,22 +22,12 @@ jobs:
     - name: Generate PDF Songbook
       run: |
         xvfb-run -- ./make_book.sh ./MuseScore-3.6.2.548021370-x86_64.AppImage
-    - name: Upload PDF songbook
-      uses: actions/upload-artifact@v2
-      with:
-        name: "songbook-pdf"
-        path: "Church Songbook.pdf"
     - name: Generate MIDI files
       run: |
         xvfb-run -- ./make_midi.sh ./MuseScore-3.6.2.548021370-x86_64.AppImage
     - name: Add all generated MIDI files into Zip archive
       run: |
         zip songbook-midi.zip MIDIs/**/*.mid
-    - name: Upload MIDI files
-      uses: actions/upload-artifact@v2
-      with:
-        name: songbook-midi
-        path: MIDIs/**/*.mid
     - name: Upload PDF songbook to a GitHub release
       uses: svenstaro/upload-release-action@v2
       with:

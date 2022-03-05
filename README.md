@@ -22,7 +22,7 @@ The sheet music in this repository were created with [MuseScore](https://musesco
     - Head over to https://musescore.org/ and dowload the MuseScore AppImage.
 
     - **Note:** the sheets were created with MuseScore 3.6. If you have trouble generating sheets with newer versions of MuseScore, download a MuseScore 3.6 AppImage from here:
-    - https://github.com/musescore/MuseScore/releases/tag/v3.6
+    - https://github.com/musescore/MuseScore/releases/tag/v3.6.2
 
 2. Run the book generation script
 
@@ -53,10 +53,6 @@ The sheet music in this repository were created with [MuseScore](https://musesco
 You can download the generated PDF book and MIDI files through the release page:
 
 - https://github.com/slatinasda/sdabg-church-songbook-sheets/releases
-
-Additionally, you can download them from Github Actions:
-
-- https://github.com/slatinasda/sdabg-church-songbook-sheets/actions
 
 
 ## Software
