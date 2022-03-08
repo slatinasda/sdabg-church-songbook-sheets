@@ -9,6 +9,7 @@ The sheet music in this repository were created with [MuseScore](https://musesco
 ## Dependecies
 
 - Linux
+- LaTeX
 - MuseScore 3.6+
 - Ghostscript 9.26+
 
