@@ -48,8 +48,7 @@ generate_pdfs() {
 
 assemble_pdfs_in_book() {
     # https://linoxide.com/linux-how-to/merge-pdf-files-linux/
-    (cd "$OUTPUT_PDF_FILES_DIR" && gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE="Church Songbook.pdf" -dBATCH {1..300}.pdf)
-    mv "$OUTPUT_PDF_FILES_DIR/Church Songbook.pdf" ./
+    gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE="Church Songbook.pdf" -dBATCH "${OUTPUT_PDF_FILES_DIR}/"{1..300}.pdf
     echo "The songbook has been successfully generated!"
 }
 
