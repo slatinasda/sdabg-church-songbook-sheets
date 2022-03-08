@@ -3,6 +3,8 @@
 SOURCE_FILES_DIR="./MSCZs"
 OUTPUT_PDF_FILES_DIR="./PDFs"
 MUSESCORE_EXECUTABLE="$1"
+COVER_FILE_PATH="./Cover/cover.pdf"
+
 
 show_help() {
 cat <<'EOF'
@@ -46,15 +48,20 @@ generate_pdfs() {
     done
 }
 
+generate_cover_page() {
+    bash "./make_cover_page.sh" || exit $?
+}
+
 assemble_pdfs_in_book() {
     # https://linoxide.com/linux-how-to/merge-pdf-files-linux/
-    gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE="Church Songbook.pdf" -dBATCH "${OUTPUT_PDF_FILES_DIR}/"{1..300}.pdf
+    gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE="Church Songbook.pdf" -dBATCH "$COVER_FILE_PATH" "${OUTPUT_PDF_FILES_DIR}/"{1..300}.pdf
     echo "The songbook has been successfully generated!"
 }
 
 main() {
     check_dependencies
     create_output_pdfs_dir
+    generate_cover_page
     generate_pdfs
     assemble_pdfs_in_book
 }
