@@ -4,8 +4,16 @@
 \usepackage{graphicx}
 
 \usepackage{fontspec}
-% Download Open Sans from https://fonts.google.com/download?family=Open%20Sans
-\setmainfont[Ligatures=TeX]{Open Sans}
+
+% Load Open Sans from sibling ../Fonts directory (files: OpenSans-*.ttf)
+\setmainfont[
+  Path = ./Fonts/,
+  UprightFont    = *-Regular.ttf,
+  BoldFont       = *-Bold.ttf,
+  ItalicFont     = *-Italic.ttf,
+  BoldItalicFont = *-BoldItalic.ttf,
+  Ligatures = TeX
+]{OpenSans}
 
 \begin{document}
 

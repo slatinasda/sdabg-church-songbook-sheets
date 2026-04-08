@@ -3,11 +3,6 @@
 *.mid
 *.zip
 
-# Fonts
-*.ttf
-*.otf
-*.woff
-
 # LaTeX
 *.log
 *.aux
