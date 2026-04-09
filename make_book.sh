@@ -14,7 +14,7 @@ Generate a PDF book from the MSCZ source files.
 
 Dependencies:
 - MuseScore 3.5+
-- Ghostscript 9.26+
+- pdfcpu 0.11.1+
 EOF
 }
 
@@ -25,8 +25,9 @@ check_dependencies() {
         exit 1
     fi
 
-    if [ "$(command -v gs)" = "" ]; then
-        echo "Ghostscript is not installed on this system. Aborting script."
+    if [ "$(command -v pdfcpu)" = "" ]; then
+        # https://github.com/pdfcpu/pdfcpu
+        echo "pdfcpu is not installed on this system. Aborting script."
         show_help
         exit 1
     fi
@@ -54,8 +55,7 @@ generate_cover_page() {
 }
 
 assemble_pdfs_in_book() {
-    # https://linoxide.com/linux-how-to/merge-pdf-files-linux/
-    gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE="$SONGBOOK_FILE_NAME" -dBATCH "$COVER_FILE_PATH" "${OUTPUT_PDF_FILES_DIR}/"{1..300}.pdf
+    pdfcpu merge "$SONGBOOK_FILE_NAME" "$COVER_FILE_PATH" "${OUTPUT_PDF_FILES_DIR}/"{1..300}.pdf
     echo "The songbook has been successfully generated!"
 }
 

@@ -11,7 +11,7 @@ The sheet music in this repository were created with [MuseScore](https://musesco
 - Linux
 - LaTeX
 - MuseScore 3.6+
-- Ghostscript 9.26+
+- [pdfcpu 0.11.1](https://github.com/pdfcpu/pdfcpu)
 
 
 ## Generate a PDF book

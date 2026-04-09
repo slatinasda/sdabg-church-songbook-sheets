@@ -21,6 +21,13 @@ jobs:
         chmod +x MuseScore-3.6.2.548021370-x86_64.AppImage
         ./MuseScore-3.6.2.548021370-x86_64.AppImage --appimage-extract
         mv squashfs-root MuseScore-3.6.2
+    - name: Download pdfcpu
+      run: |
+        wget --quiet --continue https://github.com/pdfcpu/pdfcpu/releases/download/v0.11.1/pdfcpu_0.11.1_Linux_x86_64.tar.xz
+        tar -xf pdfcpu_0.11.1_Linux_x86_64.tar.xz
+        mkdir -p "$HOME/.local/bin"
+        mv pdfcpu_0.11.1_Linux_x86_64/pdfcpu "$HOME/.local/bin/"
+        PATH="$HOME/.local/bin:$PATH"
     - name: Generate PDF Songbook
       run: |
         xvfb-run -- ./make_book.sh ./MuseScore-3.6.2/AppRun
